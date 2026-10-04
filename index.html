@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#234d40">
+<title>Δήλωση φαγητού</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f6f3ec;color:#223d33;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100svh;display:grid;place-items:center;padding:24px}main{width:100%;max-width:520px;background:#fff;border:1px solid #e3e7df;border-radius:24px;padding:clamp(24px,6vw,44px);box-shadow:0 16px 50px #203d3310}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:700;color:#65796b}h1{font-size:32px;line-height:1.15;margin:16px 0}p{line-height:1.6;color:#637169}label{display:block;font-weight:650;margin:26px 0 9px}input,textarea{display:block;width:100%;border:1px solid #b9c7bd;border-radius:12px;background:#fdfefb;padding:14px;font:inherit;color:#223d33}textarea{resize:vertical;min-height:116px}input:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid #bd963d;outline-offset:3px}small{display:block;color:#65796b;margin-top:8px;line-height:1.5}button{margin-top:26px;width:100%;border:0;border-radius:12px;padding:16px;background:#234d40;color:#fff;font:700 17px system-ui;cursor:pointer;min-height:54px}button:hover{background:#163e30}button:disabled{opacity:.65;cursor:wait}.note{font-size:13px;margin:20px 0 0}.status{color:#9b332b;font-size:14px;margin:14px 0 0}.status:empty{display:none}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">ΣΤΟ ΤΡΑΠΕΖΙ ΜΑΣ</div>
+<h1>Τι θα ήθελες να φας;</h1>
+<p>Συμπλήρωσε τα στοιχεία σου και γράψε το φαγητό που επιθυμείς.</p>
+<form id="food-form" method="post" accept-charset="UTF-8">
+<label for="full-name">Ονοματεπώνυμο *</label>
+<input id="full-name" name="fullName" autocomplete="name" placeholder="Επίθετο και όνομα" maxlength="120" required>
+<small>Γράψε πρώτα το επίθετο και μετά το όνομά σου.</small>
+<label for="food">Τι φαγητό θέλεις;</label>
+<textarea id="food" name="food" placeholder="Γράψε εδώ την επιλογή σου…" maxlength="500"></textarea>
+<input type="hidden" name="requestId" id="request-id">
+<button id="submit-button" type="submit">Επικύρωση</button>
+<p id="status" class="status" role="alert"></p>
+</form>
+<p class="note">Τα στοιχεία αποστέλλονται στον διοργανωτή για τη συγκέντρωση των επιλογών φαγητού.</p>
+<noscript><p class="status">Ενεργοποίησε τη JavaScript για να στείλεις τη δήλωσή σου.</p></noscript>
+</main>
+<script>
+// ΜΟΝΗ ΡΥΘΜΙΣΗ: Αντικατάστησε το παρακάτω με το URL του Apps Script που τελειώνει σε /exec.
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbykpe1MVM_H2IvBAfzfqQmwhlcMBEnMtAvlTgaEdHfdz1EQw8cn18hJdJTcZP64-rmn/exec";
+const form = document.getElementById('food-form');
+const button = document.getElementById('submit-button');
+const status = document.getElementById('status');
+const fullName = document.getElementById('full-name');
+const requestId = document.getElementById('request-id');
+function resetSubmission() {
+  button.disabled = false;
+  button.textContent = 'Επικύρωση';
+  status.textContent = '';
+  requestId.value = crypto.randomUUID();
+}
+window.addEventListener('pageshow', resetSubmission);
+fullName.addEventListener('input', () => fullName.setCustomValidity(''));
+form.addEventListener('submit', event => {
+  fullName.value = fullName.value.trim();
+  if (!fullName.value) {
+    event.preventDefault();
+    fullName.setCustomValidity('Συμπλήρωσε το επίθετο και το όνομά σου.');
+    fullName.reportValidity();
+    return;
+  }
+  if (!/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(GOOGLE_SCRIPT_URL)) {
+    event.preventDefault();
+    status.textContent = 'Η φόρμα δεν έχει συνδεθεί ακόμη. Ο διοργανωτής πρέπει να προσθέσει τη διεύθυνση του Google Apps Script.';
+    return;
+  }
+  if (!requestId.value) requestId.value = crypto.randomUUID();
+  form.action = GOOGLE_SCRIPT_URL;
+  button.disabled = true;
+  button.textContent = 'Αποστολή…';
+  // Κανονική υποβολή POST. Η Google εμφανίζει την επιβεβαίωση ΜΟΝΟ μετά την εγγραφή.
+  // Δεν χρησιμοποιούμε fetch/no-cors, που δεν μπορεί να επιβεβαιώσει την αποθήκευση.
+});
+</script>
+</body>
+</html>
