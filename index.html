@@ -19,6 +19,12 @@ main{min-width:0;max-width:640px}
 .information-table td{height:48px;background:#fffcfd;border-top:1px solid #ead8de;white-space:pre-wrap}
 .information-table th:last-child,.information-table td:last-child{border-right:0}
 @media(max-width:480px){body{padding:14px}main{padding:24px 18px;border-radius:18px}}
+
+.food-choice{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0;min-height:48px;padding:8px 0;cursor:pointer;font-weight:500}
+.food-choice span{white-space:normal;overflow-wrap:anywhere}
+.food-choice input{display:block;flex:0 0 22px;width:22px;height:22px;margin:0;padding:0;accent-color:#b72552;cursor:pointer}
+.information-table td{padding:4px 14px}
+.information-table tr:has(input:checked) td{background:#f9e6ed}
 </style>
 </head>
 <body>
@@ -131,221 +137,218 @@ main{min-width:0;max-width:640px}
 <option>100</option>
 </select>
 <small>Επίλεξε το όνομά σου από τη λίστα.</small>
-<label for="food">Τι φαγητό θέλεις;</label>
-<textarea id="food" name="food" placeholder="Γράψε εδώ την επιλογή σου…" maxlength="500"></textarea>
+<label for="food">Άλλα φαγητά ή συμπληρωματικές επιλογές</label>
+<textarea id="food" placeholder="Γράψε εδώ ό,τι θέλεις επιπλέον…" maxlength="500"></textarea>
 
-<!-- ΑΡΧΗ ΠΙΝΑΚΑ 100 ΓΡΑΜΜΩΝ ΚΑΙ ΜΙΑΣ ΣΤΗΛΗΣ
-     Γράψε το κείμενό σου μέσα στο <td> κάθε γραμμής.
-     Παράδειγμα: <tr><td>Παστίτσιο</td></tr>
-     Ο πίνακας είναι ενημερωτικός και δεν αποστέλλεται στο Google Sheets.
+<!-- ΑΡΧΗ ΠΙΝΑΚΑ: Άλλαξε μόνο το κείμενο μέσα στο <span> κάθε φαγητού.
+     Το ίδιο κείμενο αποστέλλεται αυτόματα στο Google Sheets όταν επιλεγεί.
 -->
-<div class="table-scroll" role="region" aria-label="Πίνακας πληροφοριών">
-<table class="information-table" aria-label="Πληροφορίες διοργανωτή, 100 γραμμές και μία στήλη">
-<tbody>
-  <!-- ΓΡΑΜΜΗ 001 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 002 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 003 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 004 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 005 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 006 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 007 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 008 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 009 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 010 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 011 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 012 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 013 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 014 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 015 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 016 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 017 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 018 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 019 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 020 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 021 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 022 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 023 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 024 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 025 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 026 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 027 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 028 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 029 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 030 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 031 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 032 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 033 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 034 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 035 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 036 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 037 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 038 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 039 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 040 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 041 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 042 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 043 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 044 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 045 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 046 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 047 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 048 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 049 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 050 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 051 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 052 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 053 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 054 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 055 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 056 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 057 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 058 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 059 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 060 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 061 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 062 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 063 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 064 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 065 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 066 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 067 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 068 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 069 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 070 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 071 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 072 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 073 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 074 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 075 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 076 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 077 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 078 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 079 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 080 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 081 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 082 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 083 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 084 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 085 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 086 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 087 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 088 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 089 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 090 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 091 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 092 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 093 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 094 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 095 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 096 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 097 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 098 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 099 -->
-  <tr><td></td></tr>
-  <!-- ΓΡΑΜΜΗ 100 -->
-  <tr><td></td></tr>
-</tbody>
-</table>
-</div>
+<p id="food-list-help">Επίλεξε όσα φαγητά θέλεις:</p>
+<div class="table-scroll" role="region" aria-labelledby="food-list-help">
+<table class="information-table" aria-label="Επιλογές φαγητού"><tbody>
+<!-- ΦΑΓΗΤΟ 001 -->
+<tr><td><label class="food-choice"><span>Φαγητό 1</span><input type="checkbox" class="food-checkbox" data-food="1"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 002 -->
+<tr><td><label class="food-choice"><span>Φαγητό 2</span><input type="checkbox" class="food-checkbox" data-food="2"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 003 -->
+<tr><td><label class="food-choice"><span>Φαγητό 3</span><input type="checkbox" class="food-checkbox" data-food="3"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 004 -->
+<tr><td><label class="food-choice"><span>Φαγητό 4</span><input type="checkbox" class="food-checkbox" data-food="4"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 005 -->
+<tr><td><label class="food-choice"><span>Φαγητό 5</span><input type="checkbox" class="food-checkbox" data-food="5"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 006 -->
+<tr><td><label class="food-choice"><span>Φαγητό 6</span><input type="checkbox" class="food-checkbox" data-food="6"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 007 -->
+<tr><td><label class="food-choice"><span>Φαγητό 7</span><input type="checkbox" class="food-checkbox" data-food="7"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 008 -->
+<tr><td><label class="food-choice"><span>Φαγητό 8</span><input type="checkbox" class="food-checkbox" data-food="8"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 009 -->
+<tr><td><label class="food-choice"><span>Φαγητό 9</span><input type="checkbox" class="food-checkbox" data-food="9"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 010 -->
+<tr><td><label class="food-choice"><span>Φαγητό 10</span><input type="checkbox" class="food-checkbox" data-food="10"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 011 -->
+<tr><td><label class="food-choice"><span>Φαγητό 11</span><input type="checkbox" class="food-checkbox" data-food="11"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 012 -->
+<tr><td><label class="food-choice"><span>Φαγητό 12</span><input type="checkbox" class="food-checkbox" data-food="12"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 013 -->
+<tr><td><label class="food-choice"><span>Φαγητό 13</span><input type="checkbox" class="food-checkbox" data-food="13"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 014 -->
+<tr><td><label class="food-choice"><span>Φαγητό 14</span><input type="checkbox" class="food-checkbox" data-food="14"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 015 -->
+<tr><td><label class="food-choice"><span>Φαγητό 15</span><input type="checkbox" class="food-checkbox" data-food="15"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 016 -->
+<tr><td><label class="food-choice"><span>Φαγητό 16</span><input type="checkbox" class="food-checkbox" data-food="16"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 017 -->
+<tr><td><label class="food-choice"><span>Φαγητό 17</span><input type="checkbox" class="food-checkbox" data-food="17"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 018 -->
+<tr><td><label class="food-choice"><span>Φαγητό 18</span><input type="checkbox" class="food-checkbox" data-food="18"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 019 -->
+<tr><td><label class="food-choice"><span>Φαγητό 19</span><input type="checkbox" class="food-checkbox" data-food="19"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 020 -->
+<tr><td><label class="food-choice"><span>Φαγητό 20</span><input type="checkbox" class="food-checkbox" data-food="20"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 021 -->
+<tr><td><label class="food-choice"><span>Φαγητό 21</span><input type="checkbox" class="food-checkbox" data-food="21"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 022 -->
+<tr><td><label class="food-choice"><span>Φαγητό 22</span><input type="checkbox" class="food-checkbox" data-food="22"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 023 -->
+<tr><td><label class="food-choice"><span>Φαγητό 23</span><input type="checkbox" class="food-checkbox" data-food="23"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 024 -->
+<tr><td><label class="food-choice"><span>Φαγητό 24</span><input type="checkbox" class="food-checkbox" data-food="24"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 025 -->
+<tr><td><label class="food-choice"><span>Φαγητό 25</span><input type="checkbox" class="food-checkbox" data-food="25"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 026 -->
+<tr><td><label class="food-choice"><span>Φαγητό 26</span><input type="checkbox" class="food-checkbox" data-food="26"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 027 -->
+<tr><td><label class="food-choice"><span>Φαγητό 27</span><input type="checkbox" class="food-checkbox" data-food="27"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 028 -->
+<tr><td><label class="food-choice"><span>Φαγητό 28</span><input type="checkbox" class="food-checkbox" data-food="28"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 029 -->
+<tr><td><label class="food-choice"><span>Φαγητό 29</span><input type="checkbox" class="food-checkbox" data-food="29"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 030 -->
+<tr><td><label class="food-choice"><span>Φαγητό 30</span><input type="checkbox" class="food-checkbox" data-food="30"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 031 -->
+<tr><td><label class="food-choice"><span>Φαγητό 31</span><input type="checkbox" class="food-checkbox" data-food="31"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 032 -->
+<tr><td><label class="food-choice"><span>Φαγητό 32</span><input type="checkbox" class="food-checkbox" data-food="32"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 033 -->
+<tr><td><label class="food-choice"><span>Φαγητό 33</span><input type="checkbox" class="food-checkbox" data-food="33"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 034 -->
+<tr><td><label class="food-choice"><span>Φαγητό 34</span><input type="checkbox" class="food-checkbox" data-food="34"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 035 -->
+<tr><td><label class="food-choice"><span>Φαγητό 35</span><input type="checkbox" class="food-checkbox" data-food="35"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 036 -->
+<tr><td><label class="food-choice"><span>Φαγητό 36</span><input type="checkbox" class="food-checkbox" data-food="36"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 037 -->
+<tr><td><label class="food-choice"><span>Φαγητό 37</span><input type="checkbox" class="food-checkbox" data-food="37"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 038 -->
+<tr><td><label class="food-choice"><span>Φαγητό 38</span><input type="checkbox" class="food-checkbox" data-food="38"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 039 -->
+<tr><td><label class="food-choice"><span>Φαγητό 39</span><input type="checkbox" class="food-checkbox" data-food="39"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 040 -->
+<tr><td><label class="food-choice"><span>Φαγητό 40</span><input type="checkbox" class="food-checkbox" data-food="40"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 041 -->
+<tr><td><label class="food-choice"><span>Φαγητό 41</span><input type="checkbox" class="food-checkbox" data-food="41"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 042 -->
+<tr><td><label class="food-choice"><span>Φαγητό 42</span><input type="checkbox" class="food-checkbox" data-food="42"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 043 -->
+<tr><td><label class="food-choice"><span>Φαγητό 43</span><input type="checkbox" class="food-checkbox" data-food="43"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 044 -->
+<tr><td><label class="food-choice"><span>Φαγητό 44</span><input type="checkbox" class="food-checkbox" data-food="44"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 045 -->
+<tr><td><label class="food-choice"><span>Φαγητό 45</span><input type="checkbox" class="food-checkbox" data-food="45"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 046 -->
+<tr><td><label class="food-choice"><span>Φαγητό 46</span><input type="checkbox" class="food-checkbox" data-food="46"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 047 -->
+<tr><td><label class="food-choice"><span>Φαγητό 47</span><input type="checkbox" class="food-checkbox" data-food="47"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 048 -->
+<tr><td><label class="food-choice"><span>Φαγητό 48</span><input type="checkbox" class="food-checkbox" data-food="48"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 049 -->
+<tr><td><label class="food-choice"><span>Φαγητό 49</span><input type="checkbox" class="food-checkbox" data-food="49"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 050 -->
+<tr><td><label class="food-choice"><span>Φαγητό 50</span><input type="checkbox" class="food-checkbox" data-food="50"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 051 -->
+<tr><td><label class="food-choice"><span>Φαγητό 51</span><input type="checkbox" class="food-checkbox" data-food="51"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 052 -->
+<tr><td><label class="food-choice"><span>Φαγητό 52</span><input type="checkbox" class="food-checkbox" data-food="52"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 053 -->
+<tr><td><label class="food-choice"><span>Φαγητό 53</span><input type="checkbox" class="food-checkbox" data-food="53"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 054 -->
+<tr><td><label class="food-choice"><span>Φαγητό 54</span><input type="checkbox" class="food-checkbox" data-food="54"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 055 -->
+<tr><td><label class="food-choice"><span>Φαγητό 55</span><input type="checkbox" class="food-checkbox" data-food="55"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 056 -->
+<tr><td><label class="food-choice"><span>Φαγητό 56</span><input type="checkbox" class="food-checkbox" data-food="56"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 057 -->
+<tr><td><label class="food-choice"><span>Φαγητό 57</span><input type="checkbox" class="food-checkbox" data-food="57"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 058 -->
+<tr><td><label class="food-choice"><span>Φαγητό 58</span><input type="checkbox" class="food-checkbox" data-food="58"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 059 -->
+<tr><td><label class="food-choice"><span>Φαγητό 59</span><input type="checkbox" class="food-checkbox" data-food="59"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 060 -->
+<tr><td><label class="food-choice"><span>Φαγητό 60</span><input type="checkbox" class="food-checkbox" data-food="60"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 061 -->
+<tr><td><label class="food-choice"><span>Φαγητό 61</span><input type="checkbox" class="food-checkbox" data-food="61"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 062 -->
+<tr><td><label class="food-choice"><span>Φαγητό 62</span><input type="checkbox" class="food-checkbox" data-food="62"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 063 -->
+<tr><td><label class="food-choice"><span>Φαγητό 63</span><input type="checkbox" class="food-checkbox" data-food="63"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 064 -->
+<tr><td><label class="food-choice"><span>Φαγητό 64</span><input type="checkbox" class="food-checkbox" data-food="64"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 065 -->
+<tr><td><label class="food-choice"><span>Φαγητό 65</span><input type="checkbox" class="food-checkbox" data-food="65"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 066 -->
+<tr><td><label class="food-choice"><span>Φαγητό 66</span><input type="checkbox" class="food-checkbox" data-food="66"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 067 -->
+<tr><td><label class="food-choice"><span>Φαγητό 67</span><input type="checkbox" class="food-checkbox" data-food="67"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 068 -->
+<tr><td><label class="food-choice"><span>Φαγητό 68</span><input type="checkbox" class="food-checkbox" data-food="68"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 069 -->
+<tr><td><label class="food-choice"><span>Φαγητό 69</span><input type="checkbox" class="food-checkbox" data-food="69"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 070 -->
+<tr><td><label class="food-choice"><span>Φαγητό 70</span><input type="checkbox" class="food-checkbox" data-food="70"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 071 -->
+<tr><td><label class="food-choice"><span>Φαγητό 71</span><input type="checkbox" class="food-checkbox" data-food="71"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 072 -->
+<tr><td><label class="food-choice"><span>Φαγητό 72</span><input type="checkbox" class="food-checkbox" data-food="72"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 073 -->
+<tr><td><label class="food-choice"><span>Φαγητό 73</span><input type="checkbox" class="food-checkbox" data-food="73"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 074 -->
+<tr><td><label class="food-choice"><span>Φαγητό 74</span><input type="checkbox" class="food-checkbox" data-food="74"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 075 -->
+<tr><td><label class="food-choice"><span>Φαγητό 75</span><input type="checkbox" class="food-checkbox" data-food="75"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 076 -->
+<tr><td><label class="food-choice"><span>Φαγητό 76</span><input type="checkbox" class="food-checkbox" data-food="76"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 077 -->
+<tr><td><label class="food-choice"><span>Φαγητό 77</span><input type="checkbox" class="food-checkbox" data-food="77"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 078 -->
+<tr><td><label class="food-choice"><span>Φαγητό 78</span><input type="checkbox" class="food-checkbox" data-food="78"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 079 -->
+<tr><td><label class="food-choice"><span>Φαγητό 79</span><input type="checkbox" class="food-checkbox" data-food="79"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 080 -->
+<tr><td><label class="food-choice"><span>Φαγητό 80</span><input type="checkbox" class="food-checkbox" data-food="80"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 081 -->
+<tr><td><label class="food-choice"><span>Φαγητό 81</span><input type="checkbox" class="food-checkbox" data-food="81"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 082 -->
+<tr><td><label class="food-choice"><span>Φαγητό 82</span><input type="checkbox" class="food-checkbox" data-food="82"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 083 -->
+<tr><td><label class="food-choice"><span>Φαγητό 83</span><input type="checkbox" class="food-checkbox" data-food="83"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 084 -->
+<tr><td><label class="food-choice"><span>Φαγητό 84</span><input type="checkbox" class="food-checkbox" data-food="84"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 085 -->
+<tr><td><label class="food-choice"><span>Φαγητό 85</span><input type="checkbox" class="food-checkbox" data-food="85"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 086 -->
+<tr><td><label class="food-choice"><span>Φαγητό 86</span><input type="checkbox" class="food-checkbox" data-food="86"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 087 -->
+<tr><td><label class="food-choice"><span>Φαγητό 87</span><input type="checkbox" class="food-checkbox" data-food="87"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 088 -->
+<tr><td><label class="food-choice"><span>Φαγητό 88</span><input type="checkbox" class="food-checkbox" data-food="88"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 089 -->
+<tr><td><label class="food-choice"><span>Φαγητό 89</span><input type="checkbox" class="food-checkbox" data-food="89"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 090 -->
+<tr><td><label class="food-choice"><span>Φαγητό 90</span><input type="checkbox" class="food-checkbox" data-food="90"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 091 -->
+<tr><td><label class="food-choice"><span>Φαγητό 91</span><input type="checkbox" class="food-checkbox" data-food="91"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 092 -->
+<tr><td><label class="food-choice"><span>Φαγητό 92</span><input type="checkbox" class="food-checkbox" data-food="92"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 093 -->
+<tr><td><label class="food-choice"><span>Φαγητό 93</span><input type="checkbox" class="food-checkbox" data-food="93"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 094 -->
+<tr><td><label class="food-choice"><span>Φαγητό 94</span><input type="checkbox" class="food-checkbox" data-food="94"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 095 -->
+<tr><td><label class="food-choice"><span>Φαγητό 95</span><input type="checkbox" class="food-checkbox" data-food="95"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 096 -->
+<tr><td><label class="food-choice"><span>Φαγητό 96</span><input type="checkbox" class="food-checkbox" data-food="96"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 097 -->
+<tr><td><label class="food-choice"><span>Φαγητό 97</span><input type="checkbox" class="food-checkbox" data-food="97"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 098 -->
+<tr><td><label class="food-choice"><span>Φαγητό 98</span><input type="checkbox" class="food-checkbox" data-food="98"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 099 -->
+<tr><td><label class="food-choice"><span>Φαγητό 99</span><input type="checkbox" class="food-checkbox" data-food="99"></label></td></tr>
+<!-- ΦΑΓΗΤΟ 100 -->
+<tr><td><label class="food-choice"><span>Φαγητό 100</span><input type="checkbox" class="food-checkbox" data-food="100"></label></td></tr>
+</tbody></table></div>
 <!-- ΤΕΛΟΣ ΠΙΝΑΚΑ -->
+<input type="hidden" name="food" id="combined-food">
 <input type="hidden" name="requestId" id="request-id">
 <button id="submit-button" type="submit">Επικύρωση</button>
 <p id="status" class="status" role="alert"></p>
@@ -382,6 +385,11 @@ form.addEventListener('submit', event => {
     status.textContent = 'Η φόρμα δεν έχει συνδεθεί ακόμη. Ο διοργανωτής πρέπει να προσθέσει τη διεύθυνση του Google Apps Script.';
     return;
   }
+  const selectedFoods = Array.from(form.querySelectorAll('.food-checkbox:checked'))
+    .map(checkbox => checkbox.closest('label').querySelector('span').textContent.trim());
+  const extraFood = document.getElementById('food').value.trim();
+  if (extraFood) selectedFoods.push(extraFood);
+  document.getElementById('combined-food').value = selectedFoods.join(' - ');
   if (!requestId.value) requestId.value = crypto.randomUUID();
   form.action = GOOGLE_SCRIPT_URL;
   button.disabled = true;
