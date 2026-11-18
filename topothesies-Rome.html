@@ -19,8 +19,8 @@ nav{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 .search input{width:100%;min-height:48px;padding:12px 16px;border:1px solid #c6d3d3;border-radius:12px;background:#f5f7f6;color:#334444;font:inherit;font-size:16px}
 .search input:focus{outline:2px solid #b51f50;outline-offset:2px}
 .place{display:grid;grid-template-columns:minmax(0,1fr) 52px;gap:8px;align-items:center}
-.place:first-child .option{background:#13253D;border-color:#13253D}
-.place:first-child .option:hover{background:#0E1C2E;border-color:#0E1C2E}
+.option-blue{background:#13253D;border-color:#13253D}
+.option-blue:hover{background:#0E1C2E;border-color:#0E1C2E}
 .map-arrow{display:grid;place-items:center;min-height:52px;border-radius:14px;background:#236344;color:white;font-size:24px;text-decoration:none}
 .map-arrow:hover{background:#194C34}
 .map-arrow:focus-visible{outline:3px solid #236344;outline-offset:3px}
@@ -36,7 +36,7 @@ nav{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 <main>
 <p id="search-status" class="search-status" role="status" aria-live="polite" aria-atomic="true"></p>
 <nav id="locations" aria-label="Τοποθεσίες Rome">
-<div class="place"><a class="option" href="rome-52-altare-della-patria.html">Altare della Patria – Βωμός της Πατρίδας</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Altare+della+Patria%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Altare della Patria – Βωμός της Πατρίδας" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option option-blue" href="rome-52-altare-della-patria.html">Altare della Patria – Βωμός της Πατρίδας</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Altare+della+Patria%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Altare della Patria – Βωμός της Πατρίδας" title="Προβολή στον χάρτη">➜</a></div>
 <div class="place"><a class="option" href="rome-55-ara-pacis-augustae.html">Ara Pacis Augustae – Βωμός της Αυγούστειας Ειρήνης</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Ara+Pacis+Augustae%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Ara Pacis Augustae – Βωμός της Αυγούστειας Ειρήνης" title="Προβολή στον χάρτη">➜</a></div>
 <div class="place"><a class="option" href="rome-41-basilica-di-san-giovanni-in-laterano.html">Basilica di San Giovanni in Laterano – Βασιλική του Αγίου Ιωάννη Λατερανού</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Basilica+di+San+Giovanni+in+Laterano%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Basilica di San Giovanni in Laterano – Βασιλική του Αγίου Ιωάννη Λατερανού" title="Προβολή στον χάρτη">➜</a></div>
 <div class="place"><a class="option" href="rome-01-basilica-di-san-pietro.html">Basilica di San Pietro – Βασιλική του Αγίου Πέτρου</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Basilica+di+San+Pietro%2C+Citt%C3%A0+del+Vaticano" aria-label="Προβολή στον χάρτη: Basilica di San Pietro – Βασιλική του Αγίου Πέτρου" title="Προβολή στον χάρτη">➜</a></div>
@@ -94,6 +94,7 @@ nav{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 <div class="place"><a class="option" href="rome-36-trinita-dei-monti.html">Trinità dei Monti – Ναός της Αγίας Τριάδας των Ορέων</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Trinit%C3%A0+dei+Monti%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Trinità dei Monti – Ναός της Αγίας Τριάδας των Ορέων" title="Προβολή στον χάρτη">➜</a></div>
 <div class="place"><a class="option" href="rome-57-via-appia-antica.html">Via Appia Antica – Αππία Οδός (Ρωμαϊκοί δρόμοι)</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Appia+Antica%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Via Appia Antica – Αππία Οδός (Ρωμαϊκοί δρόμοι)" title="Προβολή στον χάρτη">➜</a></div>
 <div class="place"><a class="option" href="rome-43-via-dei-condotti.html">Via dei Condotti – Οδός Κοντότι</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Via+dei+Condotti%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Via dei Condotti – Οδός Κοντότι" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-59-via-del-corso.html">Via del Corso</a><a class="map-arrow" href="https://www.google.com/maps/place/ZARA+Rome/@41.9027337,12.4784001,439m/data=!3m2!1e3!5s0x132f6053a4c35ee3:0x176dbadce5d216f1!4m10!1m2!2m1!1svia+del+corso+shops!3m6!1s0x132f6053ba546fe3:0xc86d5fff504408fa!8m2!3d41.901766!4d12.48049!15sChN2aWEgZGVsIGNvcnNvIHNob3BzWhUiE3ZpYSBkZWwgY29yc28gc2hvcHOSAQ5jbG90aGluZ19zdG9yZeABAA!16s%2Fg%2F1v8yzlqw?entry=ttu&g_ep=EgoyMDI2MTExNS4wIKXMDSoASAFQAw%3D%3D" aria-label="Προβολή στον χάρτη: Via del Corso" title="Προβολή στον χάρτη">➜</a></div>
 <div class="place"><a class="option" href="rome-37-villa-borghese.html">Villa Borghese – Βίλα Μποργκέζε</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Borghese%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Villa Borghese – Βίλα Μποργκέζε" title="Προβολή στον χάρτη">➜</a></div>
 <div class="place"><a class="option" href="rome-38-villa-doria-pamphili.html">Villa Doria Pamphili – Βίλα Ντόρια Παμφίλι</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Doria+Pamphili%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Villa Doria Pamphili – Βίλα Ντόρια Παμφίλι" title="Προβολή στον χάρτη">➜</a></div>
 </nav>

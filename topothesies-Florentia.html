@@ -19,8 +19,8 @@ nav{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 .search input{width:100%;min-height:48px;padding:12px 16px;border:1px solid #c6d3d3;border-radius:12px;background:#f5f7f6;color:#334444;font:inherit;font-size:16px}
 .search input:focus{outline:2px solid #b51f50;outline-offset:2px}
 .place{display:grid;grid-template-columns:minmax(0,1fr) 52px;gap:8px;align-items:center}
-.place:first-child .option{background:#13253D;border-color:#13253D}
-.place:first-child .option:hover{background:#0E1C2E;border-color:#0E1C2E}
+.option-blue{background:#13253D;border-color:#13253D}
+.option-blue:hover{background:#0E1C2E;border-color:#0E1C2E}
 .map-arrow{display:grid;place-items:center;min-height:52px;border-radius:14px;background:#236344;color:white;font-size:24px;text-decoration:none}
 .map-arrow:hover{background:#194C34}
 .map-arrow:focus-visible{outline:3px solid #236344;outline-offset:3px}
@@ -36,7 +36,7 @@ nav{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 <main>
 <p id="search-status" class="search-status" role="status" aria-live="polite" aria-atomic="true"></p>
 <nav id="locations" aria-label="Τοποθεσίες Florentia">
-<div class="place"><a class="option" href="florentia-11-buchette-del-vino.html">Buchette del Vino – Παράθυρα κρασιού</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Babae%2C+Via+Santo+Spirito+21R%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Buchette del Vino – Παράθυρα κρασιού (Babae)" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option option-blue" href="florentia-11-buchette-del-vino.html">Buchette del Vino – Παράθυρα κρασιού</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Babae%2C+Via+Santo+Spirito+21R%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Buchette del Vino – Παράθυρα κρασιού (Babae)" title="Προβολή στον χάρτη">➜</a></div>
 <div class="place"><a class="option" href="florentia-09-fontana-del-porcellino.html">Fontana del Porcellino</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Fontana+del+Porcellino%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Fontana del Porcellino" title="Προβολή στον χάρτη">➜</a></div>
 <div class="place"><a class="option" href="florentia-14-galleria-accademia.html">Galleria dell’Accademia</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Galleria+dell%E2%80%99Accademia+di+Firenze%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Galleria dell’Accademia" title="Προβολή στον χάρτη">➜</a></div>
 <div class="place"><a class="option" href="florentia-07-gelateria-dei-neri.html">Gelateria dei Neri</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Gelateria+dei+Neri%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Gelateria dei Neri" title="Προβολή στον χάρτη">➜</a></div>
