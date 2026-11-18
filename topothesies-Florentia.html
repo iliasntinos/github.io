@@ -12,15 +12,19 @@ main{width:min(680px,100%);padding:32px 20px 48px;text-align:center;margin:0 aut
 nav{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 .option{display:flex;align-items:center;justify-content:center;min-height:91px;padding:24px 22px;text-decoration:none;text-align:center;color:#fff;background:#b51f50;border:1px solid #b51f50;border-radius:16px;font-size:clamp(18px,3vw,23px);font-weight:650;line-height:1.5;overflow-wrap:anywhere;box-shadow:0 6px 24px #163d3508;transition:background .15s,border-color .15s}
 .option:hover{background:#961841;border-color:#961841}
-.option-blue { background-color: #13253D; border-color: #13253D; }
-.option-blue:hover { background-color: #0E1C2E; border-color: #0E1C2E; }
 .option:focus-visible{outline:3px solid #b51f50;outline-offset:5px}
 @media(max-width:480px){main{padding:24px 16px 36px}.brand{padding:12px 16px}.logo{width:240px}.option{padding:22px 18px}}
 .search{max-width:640px;margin:16px auto 0;text-align:left}
 .search label{display:block;font-size:14px;font-weight:650;margin-bottom:6px}
 .search input{width:100%;min-height:48px;padding:12px 16px;border:1px solid #c6d3d3;border-radius:12px;background:#f5f7f6;color:#334444;font:inherit;font-size:16px}
 .search input:focus{outline:2px solid #b51f50;outline-offset:2px}
-.option[hidden]{display:none}
+.place{display:grid;grid-template-columns:minmax(0,1fr) 52px;gap:8px;align-items:center}
+.place:first-child .option{background:#13253D;border-color:#13253D}
+.place:first-child .option:hover{background:#0E1C2E;border-color:#0E1C2E}
+.map-arrow{display:grid;place-items:center;min-height:52px;border-radius:14px;background:#236344;color:white;font-size:24px;text-decoration:none}
+.map-arrow:hover{background:#194C34}
+.map-arrow:focus-visible{outline:3px solid #236344;outline-offset:3px}
+.place[hidden]{display:none}
 .search-status{margin:0 0 20px;font-size:14px;color:#536565}
 </style>
 </head>
@@ -32,29 +36,29 @@ nav{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 <main>
 <p id="search-status" class="search-status" role="status" aria-live="polite" aria-atomic="true"></p>
 <nav id="locations" aria-label="Τοποθεσίες Florentia">
-<a class="option option-blue" href="florentia-11-buchette-del-vino.html">Buchette del Vino – Παράθυρα κρασιού</a>
-<a class="option" href="florentia-09-fontana-del-porcellino.html">Fontana del Porcellino</a>
-<a class="option" href="florentia-14-galleria-accademia.html">Galleria dell’Accademia</a>
-<a class="option" href="florentia-07-gelateria-dei-neri.html">Gelateria dei Neri</a>
-<a class="option" href="florentia-04-loggia-dei-lanzi.html">Loggia dei Lanzi</a>
-<a class="option" href="florentia-06-mercato-centrale.html">Mercato Centrale</a>
-<a class="option" href="florentia-20-museo-franco-zeffirelli.html">Museo Franco Zeffirelli</a>
-<a class="option" href="florentia-15-palazzo-pitti.html">Palazzo Pitti και Galleria Palatina</a>
-<a class="option" href="florentia-03-palazzo-vecchio.html">Palazzo Vecchio</a>
-<a class="option" href="florentia-21-palazzo-del-bargello.html">Palazzo del Bargello / Museo Nazionale del Bargello</a>
-<a class="option" href="florentia-18-palazzo-strozzi.html">Palazzo Strozzi</a>
-<a class="option" href="florentia-19-palazzo-portinari-salviati.html">Palazzo Portinari</a>
-<a class="option" href="florentia-17-piazza-della-repubblica.html">Piazza della Repubblica</a>
-<a class="option" href="florentia-02-piazza-della-signoria.html">Piazza della Signoria</a>
-<a class="option" href="florentia-01-piazza-del-duomo.html">Piazza del Duomo</a>
-<a class="option" href="florentia-16-piazzale-michelangelo.html">Piazzale Michelangelo</a>
-<a class="option" href="florentia-05-ponte-vecchio.html">Ponte Vecchio</a>
-<a class="option" href="florentia-08-san-lorenzo.html">San Lorenzo – Αγορά San Lorenzo</a>
-<a class="option" href="florentia-23-san-marco-museum.html">San Marco Museum</a>
-<a class="option" href="florentia-10-santa-croce.html">Santa Croce</a>
-<a class="option" href="florentia-22-santa-maria-novella.html">Santa Maria Novella</a>
-<a class="option" href="florentia-12-uffizi.html">Uffizi – Μουσείο Uffizi</a>
-<a class="option" href="florentia-13-pinakes-uffizi.html">Uffizi – Οι πίνακες</a>
+<div class="place"><a class="option" href="florentia-11-buchette-del-vino.html">Buchette del Vino – Παράθυρα κρασιού</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Babae%2C+Via+Santo+Spirito+21R%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Buchette del Vino – Παράθυρα κρασιού (Babae)" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-09-fontana-del-porcellino.html">Fontana del Porcellino</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Fontana+del+Porcellino%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Fontana del Porcellino" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-14-galleria-accademia.html">Galleria dell’Accademia</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Galleria+dell%E2%80%99Accademia+di+Firenze%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Galleria dell’Accademia" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-07-gelateria-dei-neri.html">Gelateria dei Neri</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Gelateria+dei+Neri%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Gelateria dei Neri" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-04-loggia-dei-lanzi.html">Loggia dei Lanzi</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Loggia+dei+Lanzi%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Loggia dei Lanzi" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-06-mercato-centrale.html">Mercato Centrale</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Mercato+Centrale+Firenze%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Mercato Centrale" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-20-museo-franco-zeffirelli.html">Museo Franco Zeffirelli</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Museo+Franco+Zeffirelli%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Museo Franco Zeffirelli" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-15-palazzo-pitti.html">Palazzo Pitti και Galleria Palatina</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Palazzo+Pitti%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Palazzo Pitti και Galleria Palatina" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-03-palazzo-vecchio.html">Palazzo Vecchio</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Palazzo+Vecchio%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Palazzo Vecchio" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-21-palazzo-del-bargello.html">Palazzo del Bargello / Museo Nazionale del Bargello</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Museo+Nazionale+del+Bargello%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Palazzo del Bargello / Museo Nazionale del Bargello" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-18-palazzo-strozzi.html">Palazzo Strozzi</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Palazzo+Strozzi%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Palazzo Strozzi" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-19-palazzo-portinari-salviati.html">Palazzo Portinari</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Palazzo+Portinari+Salviati%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Palazzo Portinari" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-17-piazza-della-repubblica.html">Piazza della Repubblica</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+della+Repubblica%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Piazza della Repubblica" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-02-piazza-della-signoria.html">Piazza della Signoria</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+della+Signoria%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Piazza della Signoria" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-01-piazza-del-duomo.html">Piazza del Duomo</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+del+Duomo%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Piazza del Duomo" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-16-piazzale-michelangelo.html">Piazzale Michelangelo</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Piazzale+Michelangelo%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Piazzale Michelangelo" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-05-ponte-vecchio.html">Ponte Vecchio</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Ponte+Vecchio%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Ponte Vecchio" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-08-san-lorenzo.html">San Lorenzo – Αγορά San Lorenzo</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Mercato+di+San+Lorenzo%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: San Lorenzo – Αγορά San Lorenzo" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-23-san-marco-museum.html">San Marco Museum</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Museo+di+San+Marco%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: San Marco Museum" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-10-santa-croce.html">Santa Croce</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Basilica+di+Santa+Croce%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Santa Croce" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-22-santa-maria-novella.html">Santa Maria Novella</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Basilica+di+Santa+Maria+Novella%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Santa Maria Novella" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-12-uffizi.html">Uffizi – Μουσείο Uffizi</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Gallerie+degli+Uffizi%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Uffizi – Μουσείο Uffizi" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="florentia-13-pinakes-uffizi.html">Uffizi – Οι πίνακες</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Gallerie+degli+Uffizi%2C+Firenze%2C+Italia" aria-label="Προβολή στον χάρτη: Uffizi – Οι πίνακες" title="Προβολή στον χάρτη">➜</a></div>
 </nav>
 </main>
 <script>
@@ -62,7 +66,7 @@ nav{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
   const input = document.getElementById('location-search');
   const status = document.getElementById('search-status');
   const normalize = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('el').replace(/ς/g, 'σ').trim();
-  const options = Array.from(document.querySelectorAll('#locations .option'), element => ({element, text: normalize(element.textContent)}));
+  const options = Array.from(document.querySelectorAll('#locations .place'), element => ({element, text: normalize(element.querySelector('.option').textContent)}));
   function filter() {
     const query = normalize(input.value);
     let count = 0;

@@ -12,15 +12,19 @@ main{width:min(680px,100%);padding:32px 20px 48px;text-align:center;margin:0 aut
 nav{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 .option{display:flex;align-items:center;justify-content:center;min-height:91px;padding:24px 22px;text-decoration:none;text-align:center;color:#fff;background:#b51f50;border:1px solid #b51f50;border-radius:16px;font-size:clamp(18px,3vw,23px);font-weight:650;line-height:1.5;overflow-wrap:anywhere;box-shadow:0 6px 24px #163d3508;transition:background .15s,border-color .15s}
 .option:hover{background:#961841;border-color:#961841}
-.option-blue { background-color: #405B73; border-color: #405B73; }
-.option-blue:hover { background-color: #32485C; border-color: #32485C; }
 .option:focus-visible{outline:3px solid #b51f50;outline-offset:5px}
 @media(max-width:480px){main{padding:24px 16px 36px}.brand{padding:12px 16px}.logo{width:240px}.option{padding:22px 18px}}
 .search{max-width:640px;margin:16px auto 0;text-align:left}
 .search label{display:block;font-size:14px;font-weight:650;margin-bottom:6px}
 .search input{width:100%;min-height:48px;padding:12px 16px;border:1px solid #c6d3d3;border-radius:12px;background:#f5f7f6;color:#334444;font:inherit;font-size:16px}
 .search input:focus{outline:2px solid #b51f50;outline-offset:2px}
-.option[hidden]{display:none}
+.place{display:grid;grid-template-columns:minmax(0,1fr) 52px;gap:8px;align-items:center}
+.place:first-child .option{background:#13253D;border-color:#13253D}
+.place:first-child .option:hover{background:#0E1C2E;border-color:#0E1C2E}
+.map-arrow{display:grid;place-items:center;min-height:52px;border-radius:14px;background:#236344;color:white;font-size:24px;text-decoration:none}
+.map-arrow:hover{background:#194C34}
+.map-arrow:focus-visible{outline:3px solid #236344;outline-offset:3px}
+.place[hidden]{display:none}
 .search-status{margin:0 0 20px;font-size:14px;color:#536565}
 </style>
 </head>
@@ -32,66 +36,66 @@ nav{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 <main>
 <p id="search-status" class="search-status" role="status" aria-live="polite" aria-atomic="true"></p>
 <nav id="locations" aria-label="Τοποθεσίες Rome">
-<a class="option option-blue" href="rome-52-altare-della-patria.html">Altare della Patria – Βωμός της Πατρίδας</a>
-<a class="option" href="rome-55-ara-pacis-augustae.html">Ara Pacis Augustae – Βωμός της Αυγούστειας Ειρήνης</a>
-<a class="option" href="rome-41-basilica-di-san-giovanni-in-laterano.html">Basilica di San Giovanni in Laterano – Βασιλική του Αγίου Ιωάννη Λατερανού</a>
-<a class="option" href="rome-01-basilica-di-san-pietro.html">Basilica di San Pietro – Βασιλική του Αγίου Πέτρου</a>
-<a class="option" href="rome-60-basilica-di-santa-maria-in-trastevere.html">Basilica di Santa Maria in Trastevere</a>
-<a class="option" href="rome-42-basilica-di-santa-maria-maggiore.html">Basilica di Santa Maria Maggiore – Βασιλική Σάντα Μαρία Ματζόρε</a>
-<a class="option" href="rome-02-bocca-della-verita.html">Bocca della Verità – Στόμα της Αλήθειας</a>
-<a class="option option-blue" href="rome-53-campidoglio.html">Campidoglio – Καπιτωλινός Λόφος</a>
-<a class="option" href="rome-03-campo-de-fiori.html">Campo de&#x27; Fiori – Πλατεία Κάμπο ντε’ Φιόρι</a>
-<a class="option" href="rome-56-campo-marzio.html">Campo Marzio – Κάμπο Μάρτσιο</a>
-<a class="option" href="rome-04-cappella-sistina.html">Cappella Sistina – Καπέλα Σιστίνα</a>
-<a class="option" href="rome-05-castel-sant-angelo.html">Castel Sant&#x27;Angelo – Κάστρο των Αγγέλων</a>
-<a class="option" href="rome-06-catacombe-di-roma.html">Catacombe di Roma – Κατακόμβες της Ρώμης</a>
-<a class="option" href="rome-45-centro-storico-di-roma.html">Centro storico di Roma – Ιστορικό κέντρο της Ρώμης</a>
-<a class="option" href="rome-07-circo-massimo.html">Circo Massimo – Μέγας Ιππόδρομος</a>
-<a class="option" href="rome-50-citta-del-vaticano.html">Città del Vaticano – Βατικανό</a>
-<a class="option" href="rome-08-colle-aventino.html">Colle Aventino – Αβεντινός Λόφος</a>
-<a class="option" href="rome-09-colosseo.html">Colosseo – Κολοσσαίο</a>
-<a class="option" href="rome-10-fontana-delle-tartarughe.html">Fontana delle Tartarughe – Κρήνη των Χελωνών</a>
-<a class="option" href="rome-11-fontana-di-trevi.html">Fontana di Trevi – Φοντάνα ντι Τρέβι</a>
-<a class="option" href="rome-12-foro-romano.html">Foro Romano – Ρωμαϊκή Αγορά</a>
-<a class="option" href="rome-13-galleria-borghese.html">Galleria Borghese – Πινακοθήκη Μποργκέζε</a>
-<a class="option" href="rome-14-galleria-colonna.html">Galleria Colonna – Πινακοθήκη Κολόννα</a>
-<a class="option" href="rome-49-galleria-doria-pamphilj.html">Galleria Doria Pamphilj – Πινακοθήκη Ντόρια Παμφίλι</a>
-<a class="option" href="rome-15-giardino-degli-aranci.html">Giardino degli Aranci – Κήπος των Πορτοκαλιών</a>
-<a class="option" href="rome-16-isola-tiberina.html">Isola Tiberina – Νήσος Τιβερίνα</a>
-<a class="option" href="rome-47-monti.html">Monti – Μόντι</a>
-<a class="option" href="rome-48-musei-capitolini.html">Musei Capitolini – Μουσεία Καπιτωλίου</a>
-<a class="option" href="rome-17-musei-vaticani.html">Musei Vaticani – Μουσεία του Βατικανού</a>
-<a class="option" href="rome-18-museo-dell-ara-pacis.html">Museo dell&#x27;Ara Pacis – Μουσείο του Βωμού της Ειρήνης</a>
-<a class="option" href="rome-19-museo-e-cripta-dei-frati-cappuccini.html">Museo e Cripta dei Frati Cappuccini – Μουσείο και Κρύπτη των Καπουτσίνων</a>
-<a class="option" href="rome-20-necropoli-di-san-pietro.html">Necropoli di San Pietro – Νεκρόπολη του Βατικανού</a>
-<a class="option" href="rome-40-palatino.html">Palatino – Παλατίνος Λόφος</a>
-<a class="option" href="rome-58-palazzo-altemps.html">Palazzo Altemps</a>
-<a class="option" href="rome-21-palazzo-del-quirinale.html">Palazzo del Quirinale – Παλάτσο ντελ Κουιρινάλε</a>
-<a class="option" href="rome-22-palazzo-farnese.html">Palazzo Farnese – Παλάτσο Φαρνέζε</a>
-<a class="option" href="rome-23-pantheon.html">Pantheon – Πάνθεον</a>
-<a class="option" href="rome-24-parco-archeologico-di-ostia-antica.html">Parco Archeologico di Ostia Antica – Αρχαιολογικό πάρκο της Όστια Αντίκα</a>
-<a class="option" href="rome-25-piazza-dei-cavalieri-di-malta.html">Piazza dei Cavalieri di Malta – Πλατεία των Ιπποτών της Μάλτας</a>
-<a class="option" href="rome-26-piazza-del-campidoglio.html">Piazza del Campidoglio – Πλατεία του Καπιτωλίου</a>
-<a class="option" href="rome-27-piazza-del-popolo.html">Piazza del Popolo – Πιάτσα ντελ Πόπολο (Πλατεία του Λαού)</a>
-<a class="option" href="rome-28-piazza-della-minerva.html">Piazza della Minerva – Πλατεία της Μινέρβα</a>
-<a class="option" href="rome-29-piazza-della-rotonda.html">Piazza della Rotonda – Πλατεία της Ροτόντας</a>
-<a class="option" href="rome-51-piazza-di-spagna.html">Piazza di Spagna – Πλατεία της Ισπανίας</a>
-<a class="option" href="rome-30-piazza-navona.html">Piazza Navona – Πιάτσα Ναβόνα</a>
-<a class="option" href="rome-31-piazza-venezia.html">Piazza Venezia – Πιάτσα Βενέτσια (Πλατεία Βενετίας)</a>
-<a class="option" href="rome-44-ponte-vittorio-emanuele-ii.html">Ponte Vittorio Emanuele II – Γέφυρα Βιτόριο Εμανουέλε Β΄</a>
-<a class="option" href="rome-46-prati.html">Prati – Πράτι</a>
-<a class="option" href="rome-32-res-gestae-di-augusto.html">Res Gestae di Augusto – Επιγραφή με τα πεπραγμένα του Αυγούστου</a>
-<a class="option" href="rome-33-scalinata-di-trinita-dei-monti.html">Scalinata di Trinità dei Monti – Ισπανικά Σκαλιά</a>
-<a class="option" href="rome-54-stanze-di-raffaello.html">Stanze di Raffaello – Αίθουσες του Ραφαήλ</a>
-<a class="option" href="rome-34-terme-di-caracalla.html">Terme di Caracalla – Λουτρά του Καρακάλλα</a>
-<a class="option" href="rome-61-testaccio.html">Testaccio</a>
-<a class="option" href="rome-39-tivoli.html">Tivoli – Τίβολι</a>
-<a class="option" href="rome-35-trastevere.html">Trastevere – Τραστέβερε</a>
-<a class="option" href="rome-36-trinita-dei-monti.html">Trinità dei Monti – Ναός της Αγίας Τριάδας των Ορέων</a>
-<a class="option" href="rome-57-via-appia-antica.html">Via Appia Antica – Αππία Οδός (Ρωμαϊκοί δρόμοι)</a>
-<a class="option" href="rome-43-via-dei-condotti.html">Via dei Condotti – Οδός Κοντότι</a>
-<a class="option" href="rome-37-villa-borghese.html">Villa Borghese – Βίλα Μποργκέζε</a>
-<a class="option" href="rome-38-villa-doria-pamphili.html">Villa Doria Pamphili – Βίλα Ντόρια Παμφίλι</a>
+<div class="place"><a class="option" href="rome-52-altare-della-patria.html">Altare della Patria – Βωμός της Πατρίδας</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Altare+della+Patria%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Altare della Patria – Βωμός της Πατρίδας" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-55-ara-pacis-augustae.html">Ara Pacis Augustae – Βωμός της Αυγούστειας Ειρήνης</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Ara+Pacis+Augustae%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Ara Pacis Augustae – Βωμός της Αυγούστειας Ειρήνης" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-41-basilica-di-san-giovanni-in-laterano.html">Basilica di San Giovanni in Laterano – Βασιλική του Αγίου Ιωάννη Λατερανού</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Basilica+di+San+Giovanni+in+Laterano%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Basilica di San Giovanni in Laterano – Βασιλική του Αγίου Ιωάννη Λατερανού" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-01-basilica-di-san-pietro.html">Basilica di San Pietro – Βασιλική του Αγίου Πέτρου</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Basilica+di+San+Pietro%2C+Citt%C3%A0+del+Vaticano" aria-label="Προβολή στον χάρτη: Basilica di San Pietro – Βασιλική του Αγίου Πέτρου" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-60-basilica-di-santa-maria-in-trastevere.html">Basilica di Santa Maria in Trastevere</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Basilica+di+Santa+Maria+in+Trastevere%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Basilica di Santa Maria in Trastevere" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-42-basilica-di-santa-maria-maggiore.html">Basilica di Santa Maria Maggiore – Βασιλική Σάντα Μαρία Ματζόρε</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Basilica+di+Santa+Maria+Maggiore%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Basilica di Santa Maria Maggiore – Βασιλική Σάντα Μαρία Ματζόρε" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-02-bocca-della-verita.html">Bocca della Verità – Στόμα της Αλήθειας</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Bocca+della+Verit%C3%A0%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Bocca della Verità – Στόμα της Αλήθειας" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-53-campidoglio.html">Campidoglio – Καπιτωλινός Λόφος</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Campidoglio%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Campidoglio – Καπιτωλινός Λόφος" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-03-campo-de-fiori.html">Campo de&#x27; Fiori – Πλατεία Κάμπο ντε’ Φιόρι</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Campo+de%27+Fiori%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Campo de&#x27; Fiori – Πλατεία Κάμπο ντε’ Φιόρι" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-56-campo-marzio.html">Campo Marzio – Κάμπο Μάρτσιο</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Campo+Marzio%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Campo Marzio – Κάμπο Μάρτσιο" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-04-cappella-sistina.html">Cappella Sistina – Καπέλα Σιστίνα</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Cappella+Sistina%2C+Citt%C3%A0+del+Vaticano" aria-label="Προβολή στον χάρτη: Cappella Sistina – Καπέλα Σιστίνα" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-05-castel-sant-angelo.html">Castel Sant&#x27;Angelo – Κάστρο των Αγγέλων</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Castel+Sant%27Angelo%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Castel Sant&#x27;Angelo – Κάστρο των Αγγέλων" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-06-catacombe-di-roma.html">Catacombe di Roma – Κατακόμβες της Ρώμης</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Catacombe+di+Roma%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Catacombe di Roma – Κατακόμβες της Ρώμης" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-45-centro-storico-di-roma.html">Centro storico di Roma – Ιστορικό κέντρο της Ρώμης</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Centro+storico+di+Roma%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Centro storico di Roma – Ιστορικό κέντρο της Ρώμης" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-07-circo-massimo.html">Circo Massimo – Μέγας Ιππόδρομος</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Circo+Massimo%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Circo Massimo – Μέγας Ιππόδρομος" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-50-citta-del-vaticano.html">Città del Vaticano – Βατικανό</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Citt%C3%A0+del+Vaticano" aria-label="Προβολή στον χάρτη: Città del Vaticano – Βατικανό" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-08-colle-aventino.html">Colle Aventino – Αβεντινός Λόφος</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Colle+Aventino%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Colle Aventino – Αβεντινός Λόφος" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-09-colosseo.html">Colosseo – Κολοσσαίο</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Colosseo%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Colosseo – Κολοσσαίο" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-10-fontana-delle-tartarughe.html">Fontana delle Tartarughe – Κρήνη των Χελωνών</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Fontana+delle+Tartarughe%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Fontana delle Tartarughe – Κρήνη των Χελωνών" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-11-fontana-di-trevi.html">Fontana di Trevi – Φοντάνα ντι Τρέβι</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Fontana+di+Trevi%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Fontana di Trevi – Φοντάνα ντι Τρέβι" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-12-foro-romano.html">Foro Romano – Ρωμαϊκή Αγορά</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Foro+Romano%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Foro Romano – Ρωμαϊκή Αγορά" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-13-galleria-borghese.html">Galleria Borghese – Πινακοθήκη Μποργκέζε</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Galleria+Borghese%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Galleria Borghese – Πινακοθήκη Μποργκέζε" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-14-galleria-colonna.html">Galleria Colonna – Πινακοθήκη Κολόννα</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Galleria+Colonna%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Galleria Colonna – Πινακοθήκη Κολόννα" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-49-galleria-doria-pamphilj.html">Galleria Doria Pamphilj – Πινακοθήκη Ντόρια Παμφίλι</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Galleria+Doria+Pamphilj%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Galleria Doria Pamphilj – Πινακοθήκη Ντόρια Παμφίλι" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-15-giardino-degli-aranci.html">Giardino degli Aranci – Κήπος των Πορτοκαλιών</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Giardino+degli+Aranci%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Giardino degli Aranci – Κήπος των Πορτοκαλιών" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-16-isola-tiberina.html">Isola Tiberina – Νήσος Τιβερίνα</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Isola+Tiberina%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Isola Tiberina – Νήσος Τιβερίνα" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-47-monti.html">Monti – Μόντι</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Monti%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Monti – Μόντι" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-48-musei-capitolini.html">Musei Capitolini – Μουσεία Καπιτωλίου</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Musei+Capitolini%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Musei Capitolini – Μουσεία Καπιτωλίου" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-17-musei-vaticani.html">Musei Vaticani – Μουσεία του Βατικανού</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Musei+Vaticani%2C+Citt%C3%A0+del+Vaticano" aria-label="Προβολή στον χάρτη: Musei Vaticani – Μουσεία του Βατικανού" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-18-museo-dell-ara-pacis.html">Museo dell&#x27;Ara Pacis – Μουσείο του Βωμού της Ειρήνης</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Museo+dell%27Ara+Pacis%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Museo dell&#x27;Ara Pacis – Μουσείο του Βωμού της Ειρήνης" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-19-museo-e-cripta-dei-frati-cappuccini.html">Museo e Cripta dei Frati Cappuccini – Μουσείο και Κρύπτη των Καπουτσίνων</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Museo+e+Cripta+dei+Frati+Cappuccini%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Museo e Cripta dei Frati Cappuccini – Μουσείο και Κρύπτη των Καπουτσίνων" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-20-necropoli-di-san-pietro.html">Necropoli di San Pietro – Νεκρόπολη του Βατικανού</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Necropoli+di+San+Pietro%2C+Citt%C3%A0+del+Vaticano" aria-label="Προβολή στον χάρτη: Necropoli di San Pietro – Νεκρόπολη του Βατικανού" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-40-palatino.html">Palatino – Παλατίνος Λόφος</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Palatino%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Palatino – Παλατίνος Λόφος" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-58-palazzo-altemps.html">Palazzo Altemps</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Palazzo+Altemps%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Palazzo Altemps" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-21-palazzo-del-quirinale.html">Palazzo del Quirinale – Παλάτσο ντελ Κουιρινάλε</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Palazzo+del+Quirinale%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Palazzo del Quirinale – Παλάτσο ντελ Κουιρινάλε" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-22-palazzo-farnese.html">Palazzo Farnese – Παλάτσο Φαρνέζε</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Palazzo+Farnese%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Palazzo Farnese – Παλάτσο Φαρνέζε" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-23-pantheon.html">Pantheon – Πάνθεον</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Pantheon%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Pantheon – Πάνθεον" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-24-parco-archeologico-di-ostia-antica.html">Parco Archeologico di Ostia Antica – Αρχαιολογικό πάρκο της Όστια Αντίκα</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Parco+Archeologico+di+Ostia+Antica%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Parco Archeologico di Ostia Antica – Αρχαιολογικό πάρκο της Όστια Αντίκα" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-25-piazza-dei-cavalieri-di-malta.html">Piazza dei Cavalieri di Malta – Πλατεία των Ιπποτών της Μάλτας</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+dei+Cavalieri+di+Malta%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Piazza dei Cavalieri di Malta – Πλατεία των Ιπποτών της Μάλτας" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-26-piazza-del-campidoglio.html">Piazza del Campidoglio – Πλατεία του Καπιτωλίου</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+del+Campidoglio%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Piazza del Campidoglio – Πλατεία του Καπιτωλίου" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-27-piazza-del-popolo.html">Piazza del Popolo – Πιάτσα ντελ Πόπολο (Πλατεία του Λαού)</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+del+Popolo%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Piazza del Popolo – Πιάτσα ντελ Πόπολο (Πλατεία του Λαού)" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-28-piazza-della-minerva.html">Piazza della Minerva – Πλατεία της Μινέρβα</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+della+Minerva%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Piazza della Minerva – Πλατεία της Μινέρβα" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-29-piazza-della-rotonda.html">Piazza della Rotonda – Πλατεία της Ροτόντας</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+della+Rotonda%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Piazza della Rotonda – Πλατεία της Ροτόντας" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-51-piazza-di-spagna.html">Piazza di Spagna – Πλατεία της Ισπανίας</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+di+Spagna%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Piazza di Spagna – Πλατεία της Ισπανίας" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-30-piazza-navona.html">Piazza Navona – Πιάτσα Ναβόνα</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+Navona%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Piazza Navona – Πιάτσα Ναβόνα" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-31-piazza-venezia.html">Piazza Venezia – Πιάτσα Βενέτσια (Πλατεία Βενετίας)</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Piazza+Venezia%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Piazza Venezia – Πιάτσα Βενέτσια (Πλατεία Βενετίας)" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-44-ponte-vittorio-emanuele-ii.html">Ponte Vittorio Emanuele II – Γέφυρα Βιτόριο Εμανουέλε Β΄</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Ponte+Vittorio+Emanuele+II%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Ponte Vittorio Emanuele II – Γέφυρα Βιτόριο Εμανουέλε Β΄" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-46-prati.html">Prati – Πράτι</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Prati%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Prati – Πράτι" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-32-res-gestae-di-augusto.html">Res Gestae di Augusto – Επιγραφή με τα πεπραγμένα του Αυγούστου</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Res+Gestae%2C+Museo+dell%27Ara+Pacis%2C+Roma" aria-label="Προβολή στον χάρτη: Res Gestae di Augusto – Επιγραφή με τα πεπραγμένα του Αυγούστου" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-33-scalinata-di-trinita-dei-monti.html">Scalinata di Trinità dei Monti – Ισπανικά Σκαλιά</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Scalinata+di+Trinit%C3%A0+dei+Monti%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Scalinata di Trinità dei Monti – Ισπανικά Σκαλιά" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-54-stanze-di-raffaello.html">Stanze di Raffaello – Αίθουσες του Ραφαήλ</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Stanze+di+Raffaello%2C+Citt%C3%A0+del+Vaticano" aria-label="Προβολή στον χάρτη: Stanze di Raffaello – Αίθουσες του Ραφαήλ" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-34-terme-di-caracalla.html">Terme di Caracalla – Λουτρά του Καρακάλλα</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Terme+di+Caracalla%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Terme di Caracalla – Λουτρά του Καρακάλλα" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-61-testaccio.html">Testaccio</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Testaccio%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Testaccio" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-39-tivoli.html">Tivoli – Τίβολι</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Tivoli" aria-label="Προβολή στον χάρτη: Tivoli – Τίβολι" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-35-trastevere.html">Trastevere – Τραστέβερε</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Trastevere%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Trastevere – Τραστέβερε" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-36-trinita-dei-monti.html">Trinità dei Monti – Ναός της Αγίας Τριάδας των Ορέων</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Trinit%C3%A0+dei+Monti%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Trinità dei Monti – Ναός της Αγίας Τριάδας των Ορέων" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-57-via-appia-antica.html">Via Appia Antica – Αππία Οδός (Ρωμαϊκοί δρόμοι)</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Appia+Antica%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Via Appia Antica – Αππία Οδός (Ρωμαϊκοί δρόμοι)" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-43-via-dei-condotti.html">Via dei Condotti – Οδός Κοντότι</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Via+dei+Condotti%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Via dei Condotti – Οδός Κοντότι" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-37-villa-borghese.html">Villa Borghese – Βίλα Μποργκέζε</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Borghese%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Villa Borghese – Βίλα Μποργκέζε" title="Προβολή στον χάρτη">➜</a></div>
+<div class="place"><a class="option" href="rome-38-villa-doria-pamphili.html">Villa Doria Pamphili – Βίλα Ντόρια Παμφίλι</a><a class="map-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Doria+Pamphili%2C+Roma%2C+Italia" aria-label="Προβολή στον χάρτη: Villa Doria Pamphili – Βίλα Ντόρια Παμφίλι" title="Προβολή στον χάρτη">➜</a></div>
 </nav>
 </main>
 <script>
@@ -99,7 +103,7 @@ nav{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
   const input = document.getElementById('location-search');
   const status = document.getElementById('search-status');
   const normalize = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('el').replace(/ς/g, 'σ').trim();
-  const options = Array.from(document.querySelectorAll('#locations .option'), element => ({element, text: normalize(element.textContent)}));
+  const options = Array.from(document.querySelectorAll('#locations .place'), element => ({element, text: normalize(element.querySelector('.option').textContent)}));
   function filter() {
     const query = normalize(input.value);
     let count = 0;
